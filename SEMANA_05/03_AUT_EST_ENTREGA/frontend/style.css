@@ -19,23 +19,22 @@ body{
     width: 100%;
     max-width: 1300px;
     max-height: 1300px;
-    background: white;
     margin: 80px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
 }
-.direitaCima{
+.esquerda{
     position: relative;
     background: #274d99;
     padding: 20px;
 
+
 }
-.textoPerfil{
+.perfil{
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 3px solid #3961b1;
 
 }
 .perfil .imagem{
@@ -108,7 +107,7 @@ body{
     text-align: justify;
 }
 
-.container .esquerda{
+.container .direita{
     display: flex;
     flex-direction: column;
     position: relative;
@@ -182,22 +181,83 @@ body{
     text-align: justify;
 }
 
-@media screen and (max-width: 1128px) {
-	*{ 
-	   width: 70%;
+@media(max-width:1000px) {
+
+    .container {
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .perfil .imagem{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 50%;
+        align-items: center;
+    }
+    .titulo1{
+        font-size: 23px;
+    }
+    .titulo2{
+        font-size: 23px;
+    }
+
+    .titulo3{
+        font-size: 23px;
+    }
+    .titulo4{
+        font-size: 23px;
+    }
+    .tempoTrab{
+        font-size: 20px;
+    }
+    .skill1{
+        font-size: 18px;
+    }
+    .skill2{
+        font-size: 18px;
+    }
+    .skill3{
+        font-size: 18px;
     }
 }
 
-/*seletores para tablets*/
-@media screen and (max-width: 768px) {
-	*{
-        width: 50%;
-    } 
-}
+@media(max-width:600px) {
+    .container {
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .titulo1{
+        font-size: 20px;
+    }
+    .titulo2{
+        font-size: 20px;
+    }
 
-/*seletores para celurares*/
-@media screen and (max-width: 520px) {
-	*{ 
-	   width: 100%;
+    .titulo3{
+        font-size: 20px;
+    }
+    .titulo4{
+        font-size: 20px;
+    }
+    .tempoTrab{
+        font-size: 20px;
+    }
+    .skill1{
+        font-size: 16px;
+    }
+    .skill2{
+        font-size: 16px;
+    }
+    .skill3{
+        font-size: 16px;
+    }
+    .perfil .imagem{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 40%;
+        align-items: center;
     }
 }
