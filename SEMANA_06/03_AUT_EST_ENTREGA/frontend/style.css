@@ -180,7 +180,14 @@ body{
     margin-bottom: 10px;
     text-align: justify;
 }
-
+.button1{
+    background-color: #274d99;
+    border: none;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
 @media only screen and (max-width:1000px) {
 
     .container {
