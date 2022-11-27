@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lançamento Vertical</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body class="corpo">
+    <header class="header">
+      <h1>Cálculo do tempo e da altura máxima de um lançamento vertical</h1>
+      <nav class="nav">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./1.LancamentoVertical.html">Lançamento Vertical</a></li>
+        <li><a href="./2.PontoMaxEMin.html">Ponto de Máximo/Mínimo</a></li>
+        <li><a href="./3.Temperatura.html">Temperatura</a></li>
+        <li><a href="./4.ConsumoDeEnergia.html">Consumo de Energia</a></li>
+      </nav>
+    </header>
+    <section>
+      <p>
+        Insira abaixo o valor da velocidade inicial, em m/s, e posteriormente aperte o botão para calcular o tempo e a altura máxima desse lançamento vertical.
+      </p>
+      <form>
+        <label>Velocidade Inicial (m/s)</label>
+        <input type="number" id="velocidadeInicial" name="velocidadeInicial" value="0" />
+        <br>
+        <p id="valorInserido"></p>
+      </form>
+      <button class="button1" onclick="calcHmaxETempo()">Realizar Calculo</button>
+    </section>
+    
+  </body>
+</html>
