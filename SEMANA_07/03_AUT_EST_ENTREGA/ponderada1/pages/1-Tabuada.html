@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../ponderada.js"></script>
+</head>
+<body>
+    <header class="header">
+            <nav class="nav">
+                <li><a href="./1-Tabuada.html">Tabuada</a></li>
+                <li><a href="./2-Palíndromo.html">Palíndromo</a></li>
+                <li><a href="./3-Um,dois,três,PI.html">Um,dois,três,PI</a></li>
+                <li><a href="./4-Reforma.html">Reforma</a></li>
+            </nav>
+    </header>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Tabuada</h1>
+            </div>
+            <form class="card-form" method="dialog" action="">
+                <div class="form-item">
+                    <span>Base da Tabuada</span>
+                    <input type="text" id="baseTabuada" required>
+                </div>
+                <div class="form-item">
+                    <span>A tabuada deve começar por:</span>
+                    <input type="text" id="termo1" value="1" required>
+                </div>
+                <div class="form-item">
+                    <span>A tabuada deve terminar por:</span>
+                    <input type="text" id="termo2" value="1" required>
+                </div>
+                <button type="submit" class="button1" onclick="tabuada()">Criar tabuada</button>
+                <div id="resultado"></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
