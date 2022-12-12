@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATUALIZA CURSO</title>
+</head>
+<body>
+    <h1>Atualiza o curso</h1>
+        <br>
+            <!--Cria a classe para inserir o CNPJ ou CPF para cadastro-->
+            <form id="formulario" name="form2" method="post" action="/atualizarFormacao" class="textfield">
+                <label for="usuario">Nome da Formação</label>
+                <input type="text" id="curso" name="curso"><br>
+                <label for="usuario">Instituição</label>
+                <input type="text" id="descricao" name="descricao"><br>
+                <label for="usuario">Inicio e Fim</label>
+                <input type="text" id="inicioefim" name="inicioefim"><br>
+                <!--Cria o botao para avançar-->
+                <button class="btn-login">AVANÇAR</button>
+            </form>
+        <script>
+
+        let url = new URL(window.location.href);
+        let params = url.searchParams;
+        url = '/atualizarFormacao?id='+url.searchParams.get("id");
+
+        fetch(url)
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            let formacao = data;
+
+            formacao.map(function(formacao) {
+                document.getElementById('curso').value = formacao.curso;
+                document.getElementById('descricao').value = formacao.descricao;
+                document.getElementById('inicioefim').value = formacao.inicioefim;
+            });
+            alert(response.json());
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+        </script>
+</body>
+</html>

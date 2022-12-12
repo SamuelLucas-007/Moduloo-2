@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href='https://css.gg/instagram.css' rel='stylesheet'>
+  <link href='https://css.gg/mail.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://css.gg/phone.css' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="./index.js"></script>
+
+  <title>Curriculo</title>
+</head>
+
+<body>
+  <div class="container">
+    <div id="esquerda" class="esquerda">
+      <div class="perfil">
+        <div class="imagem">
+          <img src="./image.jpeg">
+        </div>
+        <h1>Jobyswaldo Pereira</h1>
+        <br>
+        <h2 class="profissao">Engenheiro Elétrico</h2>
+      </div>
+      <div class="informacoesDeContato">
+        <h4 class="titulo1">Contatos</h4>
+        <br>
+        <div class="infoContato">
+          <i class="fa fa-instagram"></i>
+          <h5 class="contatos">@Jobyswaldo</h5>
+        </div>
+        <div class="infoContato">
+          <i class="fa fa-phone"></i>
+          <h5 class="contatos">(11) 9 1234-5678</h5>
+        </div>
+        <div class="infoContato">
+          <i class="fa fa-envelope"></i>
+          <h5 class="contatos">Jobyswaldo@Jobyswaldo.com</h5>
+        </div>
+        <div class="infoContato">
+          <i class="fa fa-linkedin-square"></i>
+          <h5 class="contatos">www.linkedin.com/jobyswaldo</h5>
+        </div>
+      </div>
+      <button id="button2" class="button2"><a href="inserirFormacao">Adicionar Formação</a></button>
+      <h2 class="titulo1">Formações</h2>
+      <div class="formacoes" id="formacoes">
+      </div>
+    </div>
+
+    <div class="direita">
+      <button id="button1" class="button1">Mudar de cor</button>
+      <div class="descricao">
+        <h2 class="titulo3">Descrição</h2>
+        <div id="descricao">
+          <button type="button" class="button1" onclick="carregarDescricao()">Mostrar descricao</button>
+        </div>
+      </div>
+      <div class="experiencias">
+        <h2 class="titulo4">Experiências</h2>
+        <div>
+          <div class="tempoTrab">
+            <h5 class="experiencia">2019 - ATUALMENTE</h5>
+            <h5 class="experiencia">Lorem</h5>
+          </div>
+          <div class="descricaoExp">
+            <h4 class="experiencia">Engenheiro Elétrico</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Aliquet porttitor lacus luctus accumsan. Viverra maecenas accumsan lacus vel
+              facilisis volutpat est velit egestas.</p>
+          </div>
+        </div>
+        <div>
+          <div class="tempoTrab">
+            <h5 class="experiencia">2013 - 2019</h5>
+            <h5 class="experiencia">Lorem</h5>
+          </div>
+          <div class="descricaoExp">
+            <h4 class="experiencia">Engenheiro Elétrico</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Aliquet porttitor lacus luctus accumsan. Viverra maecenas accumsan lacus vel
+              facilisis volutpat est velit egestas.</p>
+          </div>
+        </div>
+        <div>
+          <div class="tempoTrab">
+            <h5 class="experiencia">2006 - 2012</h5>
+            <h5 class="experiencia">Lorem</h5>
+          </div>
+          <div class="descricaoExp">
+            <h4 class="experiencia">Engenheiro Elétrico</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Aliquet porttitor lacus luctus accumsan. Viverra maecenas accumsan lacus vel
+              facilisis volutpat est velit egestas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="skillsAdiquiridas" id="skillsAdiquiridas">
+        <button id="button1" class="button1"><a href="inserirSkill">Adicionar Skill</a></button>
+        <h2 class="titulo5">Skills Adiquiridas</h2>
+        <div class="skills" id="skills">
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+  <script>
+        $("#button1").on("click",botao)
+        let indice = 0;
+    function botao(){
+      if (indice == 0){
+        $(".esquerda").css("background", "white");
+        $("h1").css("color", "black");
+        $(".titulo1").css("color", "black");
+        $(".titulo2").css("color", "black");
+        $(".profissao").css("color", "black");
+        $("h4").css("color", "black");
+        $(".contatos").css("color", "black");
+        $(".formacao").css("color", "black");
+        $("h3").css("color", "black");
+        $("i").css("color", "black");
+        $(".direita").css("background", "#274d99");
+        $(".titulo3").css("color", "White");
+        $(".titulo4").css("color", "white");
+        $(".titulo5").css("color", "white");
+        $("p").css("color", "white");
+        $(".experiencia").css("color", "white");
+        $(".skills").css("color", "white");
+        $(".button1").css("background-color", "white");
+        $(".button1").css("color", "black");
+        indice += 1;
+      }
+      else{
+        $(".esquerda").css("background", "#274d99");
+        $("h1").css("color", "white");
+        $(".titulo1").css("color", "white");
+        $(".titulo2").css("color", "white");
+        $(".profissao").css("color", "white");
+        $("h4").css("color", "white");
+        $(".contatos").css("color", "white");
+        $(".formacao").css("color", "white");
+        $("h3").css("color", "white");
+        $("i").css("color", "#04e8fd");
+        $(".direita").css("background", "white");
+        $(".titulo3").css("color", "#274d9a");
+        $(".titulo4").css("color", "#274d9a");
+        $(".titulo5").css("color", "#274d9a");
+        $("p").css("color", "black");
+        $(".experiencia").css("color", "black");
+        $(".skills").css("color", "black");
+        $(".button1").css("background-color", "#274d9a");
+        $(".button1").css("color", "white");
+        indice -= 1;
+      }
+    }
+  const urlFormacao = "/formacao";
+  const divFormacao = document.getElementById("formacoes");
+
+      fetch(urlFormacao)//faz a requisição
+          .then((response) => {
+              return response.json();
+          })
+          .then((data) => {
+              let saida = '';
+              let formacoes = data;
+              formacoes.map(function (formacao) {//map é um método que percorre o array
+                saida += '<h5 class="formacao">' + `${formacao.inicioefim}` + '</h5><h4 class="formacao">' + `${formacao.curso}` + '</h4><h4 class="formacao">' + `${formacao.descricao}` + '</h4><a href="/removerFormacao?id=' + `${formacao.id}` + '">Excluir</a> | <a href="/atualizarFormacao.html?id=' + `${formacao.id}` + '">Editar</a><br><br>'  
+              });
+              divFormacao.innerHTML = saida;
+          })
+
+  const urlSkills = "/skills";
+  const divSkills = document.getElementById("skills");
+
+      fetch(urlSkills)//faz a requisição
+          .then((response) => {
+              return response.json();
+          })
+          .then((data) => {
+              let saida = '';
+              let skills = data;
+              skills.map(function (skills) {//map é um método que percorre o array
+                saida += '<h5 class="skills">' + `${skills.nome}` + '</h5><a href="/removerSkills?id=' + `${skills.id}` + '">Excluir</a> | <a href="/atualizarSkill.html?id=' + `${skills.id}` + '">Editar</a><br><br>'  
+              });
+              divSkills.innerHTML = saida;
+          })
+  </script>
+</body>
+
+</html>

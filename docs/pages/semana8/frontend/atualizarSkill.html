@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATUALIZA CURSO</title>
+</head>
+<body>
+    <h1>Atualiza o curso</h1>
+        <br>
+            <!--Cria a classe para inserir o CNPJ ou CPF para cadastro-->
+            <form id="formulario" name="form2" method="post" action="/atualizarSkills" class="textfield">
+                <label>Nome da Skill</label>
+                <input type="text" id="nome" name="nome">
+                <br>
+                <!--Cria o botao para avançar-->
+                <button class="btn-login">AVANÇAR</button>
+            </form>
+        <script>
+           let url = new URL(window.location.href);
+            let params = url.searchParams;
+            url = '/atualizarSkills?id='+url.searchParams.get("id");
+
+            fetch(url)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                let skill = data;
+
+                skill.map(function(skill) {
+                    document.getElementById('nome').value = skill.nome;
+                });
+                alert(response.json());
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+
+        </script>
+</body>
+</html>
