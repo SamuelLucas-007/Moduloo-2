@@ -25,10 +25,10 @@
     <div id="esquerda" class="esquerda">
       <div class="perfil">
         <div class="imagem">
-          <img src="../image.jpeg">
+          <img src="./image.jpeg">
         </div>
         <h1>Jobyswaldo Pereira</h1>
-        <br />
+        <br>
         <h2 class="profissao">Engenheiro Elétrico</h2>
       </div>
       <div class="informacoesDeContato">
@@ -51,17 +51,9 @@
           <h5 class="contatos">www.linkedin.com/jobyswaldo</h5>
         </div>
       </div>
-
-      <div class="formacoes">
-        <h3 class="titulo2">Formações</h3>
-        <h5 class="formacao">2004 - 2008</h5>
-        <h4 class="formacao">Bacharel em Engenharia Elétrica</h4>
-        <h4 class="formacao">CEFET-MG</h4>
-        <br>
-        <br>
-        <h5 class="formacao">2016 - 2018</h5>
-        <h4 class="formacao">Doutorado em Engenharia Elétrica</h4>
-        <h4 class="formacao">CEFET-MG</h4>
+      <button id="button2" class="button2"><a href="inserirFormacao">Adicionar Formação</a></button>
+      <h2 class="titulo1">Formações</h2>
+      <div class="formacoes" id="formacoes">
       </div>
     </div>
 
@@ -112,19 +104,13 @@
           </div>
         </div>
       </div>
-
-      <div class="skillsAdiquiridas">
+      <div class="skillsAdiquiridas" id="skillsAdiquiridas">
+        <button id="button1" class="button1"><a href="inserirSkill">Adicionar Skill</a></button>
         <h2 class="titulo5">Skills Adiquiridas</h2>
-        <div class="skill1">
-          <h4 class="skills">Instalações elétricas residênciais</h4>
-        </div>
-        <div class="skill2">
-          <h4 class="skills">Instalações elétricas prediais</h4>
-        </div>
-        <div class="skill3">
-          <h4 class="skills">Instalações de sistemas de energias renováveis</h4>
+        <div class="skills" id="skills">
         </div>
       </div>
+    </div>
     </div>
   </div>
   </div>
@@ -177,26 +163,38 @@
         indice -= 1;
       }
     }
-  </script>
-</body>
+  const urlFormacao = "/formacao";
+  const divFormacao = document.getElementById("formacoes");
 
-</html>
-
-<script>
-  const urlCurso = "/curso";
-  const divCurso = document.getElementById("listar");
-
-      fetch(urlCurso)//faz a requisição
+      fetch(urlFormacao)//faz a requisição
           .then((response) => {
               return response.json();
           })
           .then((data) => {
               let saida = '';
-              let cursos = data;
-              cursos.map(function (cursos) {//map é um método que percorre o array
-                saida += '<h2>' + `${cursos.Descricao_curso}` + '</h2><p>' + `${cursos.Nome_curso}` + '|' + `${cursos.Periodo_curso}` + ' | <a href="/removeCurso?CursoID=' + `${cursos.CursoID}` + '">DELETE</a> | <a href="/atualiza.html?' + `${cursos.CursoID}` + '">UPDATE</a></p><br>'  
+              let formacoes = data;
+              formacoes.map(function (formacao) {//map é um método que percorre o array
+                saida += '<h5 class="formacao">' + `${formacao.inicioefim}` + '</h5><h4 class="formacao">' + `${formacao.curso}` + '</h4><h4 class="formacao">' + `${formacao.descricao}` + '</h4><a href="/removerFormacao?id=' + `${formacao.id}` + '">Excluir</a> | <a href="/atualizarFormacao.html?id=' + `${formacao.id}` + '">Editar</a><br><br>'  
               });
-              divCurso.innerHTML = saida;
+              divFormacao.innerHTML = saida;
           })
 
-</script>
+  const urlSkills = "/skills";
+  const divSkills = document.getElementById("skills");
+
+      fetch(urlSkills)//faz a requisição
+          .then((response) => {
+              return response.json();
+          })
+          .then((data) => {
+              let saida = '';
+              let skills = data;
+              skills.map(function (skills) {//map é um método que percorre o array
+                saida += '<h5 class="skills">' + `${skills.nome}` + '</h5><a href="/removerSkills?id=' + `${skills.id}` + '">Excluir</a> | <a href="/atualizarSkill.html?id=' + `${skills.id}` + '">Editar</a><br><br>'  
+              });
+              divSkills.innerHTML = saida;
+          })
+  </script>
+</body>
+
+</html>

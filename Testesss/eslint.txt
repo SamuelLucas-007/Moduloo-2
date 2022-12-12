@@ -1,0 +1,6 @@
+primeiramente em um projeto, entre em uma pasta e de um npm init
+
+
+depois criei um js que chama server.js
+de um npm install express
+depois um npm install eslint --save-dev
