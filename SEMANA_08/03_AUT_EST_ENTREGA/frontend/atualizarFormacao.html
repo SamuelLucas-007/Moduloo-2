@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATUALIZA CURSO</title>
+    <title>Atualizar Formação</title>
 </head>
 <body>
-    <h1>Atualiza o curso</h1>
+    <h1>Atualizar Formação</h1>
         <br>
             <!--Cria a classe para inserir o CNPJ ou CPF para cadastro-->
-            <form id="formulario" name="form2" method="post" action="/atualizarFormacao" class="textfield">
+            <form id="form" name="form2" method="post" action="/atualizarFormacao" class="textfield">
+                <input type="hidden" name="id" id="id">
                 <label for="usuario">Nome da Formação</label>
                 <input type="text" id="curso" name="curso"><br>
                 <label for="usuario">Instituição</label>
@@ -18,7 +19,7 @@
                 <label for="usuario">Inicio e Fim</label>
                 <input type="text" id="inicioefim" name="inicioefim"><br>
                 <!--Cria o botao para avançar-->
-                <button class="btn-login">AVANÇAR</button>
+                <button class="btn-login" type="submit">AVANÇAR</button>
             </form>
         <script>
 
@@ -34,6 +35,7 @@
             let formacao = data;
 
             formacao.map(function(formacao) {
+                document.getElementById('id').value = formacao.id;
                 document.getElementById('curso').value = formacao.curso;
                 document.getElementById('descricao').value = formacao.descricao;
                 document.getElementById('inicioefim').value = formacao.inicioefim;
@@ -43,6 +45,12 @@
         .catch(function(error) {
             console.log(error);
         });
+        
+        let form = document.getElementById("form");
+            let id = +window.location.search.replace('?', '');
+
+            form.action = '/atualizarFormacao?' + id;
+
         </script>
 </body>
 </html>
