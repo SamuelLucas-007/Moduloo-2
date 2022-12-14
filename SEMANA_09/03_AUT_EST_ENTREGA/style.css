@@ -1,0 +1,96 @@
+body, html { 
+	width: 110%;
+	height: 100%;
+	margin: 10;
+	color: #650aa6;
+    /*background-image: url(https://blog.arbolez.com/wp-content/uploads/2018/09/gatinhos-fofos.jpg);*/
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+	Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  overflow: hidden;
+}
+
+body{
+    
+    background-image: url(./Pug.jpg);
+    overflow: hidden;
+}
+
+
+.quebradelinha {
+    display: flex;
+    gap: 50px
+
+}
+
+.quebradelinha {
+    margin-left: 20%;
+    height: 20;
+}
+
+main > h1{
+    position: absolute;
+    left: 30%;
+    top: 10%;
+}
+
+main > #valor1{
+    position: absolute;
+    left: 30%;
+    top: 18%;
+}
+#selecionar{
+    position: absolute;
+    width: 110px;
+    height: 20px;
+    left: 40vw;
+    top: 25vw;
+    text-align: center;
+    margin-top: -2%;
+}
+
+#vP{
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    margin-top: 10%;
+    width: 15VW;
+    height: 1.5VW;
+    border-color: white;
+}
+
+#n{
+    position: absolute;
+    left: 40%;
+    top: 15%;
+    margin-top: 10%;
+    width: 15VW;
+    height: 1.5VW;
+    border-color: white;
+}
+
+#i{
+    position: absolute;
+    left:40%;
+    top: 20%;
+    margin-top: 10%;
+    width: 15VW;
+    height: 1.5VW;
+    border-color: white;
+}
+.button-calc{
+    position: absolute;
+    left: 50%;
+    top: 21.9%;
+    margin-top: 13%;
+    width: 10VW;
+    height: 1.5VW
+}
+
+#resultado{
+    position: absolute;
+    width: 250px;
+    height: 3px;
+    left: 40vw;
+    top: 25vw;
+    text-align: center;
+}

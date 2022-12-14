@@ -10,15 +10,16 @@
     <h1>Atualiza o curso</h1>
         <br>
             <!--Cria a classe para inserir o CNPJ ou CPF para cadastro-->
-            <form id="formulario" name="form2" method="post" action="/atualizarSkills" class="textfield">
+            <form id="form" name="form2" method="post" action="/atualizarSkills" class="textfield">
+                <input type="hidden" name="id" id="id">
                 <label>Nome da Skill</label>
                 <input type="text" id="nome" name="nome">
                 <br>
                 <!--Cria o botao para avançar-->
-                <button class="btn-login">AVANÇAR</button>
+                <button class="btn-login" type="submit">AVANÇAR</button>
             </form>
         <script>
-           let url = new URL(window.location.href);
+            let url = new URL(window.location.href);
             let params = url.searchParams;
             url = '/atualizarSkills?id='+url.searchParams.get("id");
 
@@ -30,6 +31,7 @@
                 let skill = data;
 
                 skill.map(function(skill) {
+                    document.getElementById('id').value = skill.id;
                     document.getElementById('nome').value = skill.nome;
                 });
                 alert(response.json());
@@ -37,6 +39,11 @@
             .catch(function(error) {
                 console.log(error);
             });
+
+            let form = document.getElementById("form");
+            let id = +window.location.search.replace('?', '');
+
+            form.action = '/atualizarSkills?' + id;
 
         </script>
 </body>
